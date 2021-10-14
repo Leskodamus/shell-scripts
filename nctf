@@ -1,0 +1,38 @@
+#!/bin/sh
+
+# netcat file transfer script 
+# for receiver and sender 
+
+while true
+do
+	read -p "receive[0] or send[1] file/dir?: " method
+	if [ $method -eq 0 ]; then
+		read -p "Port: " port 
+		if [ -n "$port" ]; then
+			nc -l -p $port | xz -dc | tar xvf -
+			break
+		else 
+			echo "Please specify a port!"
+		fi
+	elif [ $method -eq 1 ]; then
+		read -p "Receiver IP: " recIP
+		if [ -n "$recIP" ]; then
+			read -p "Port: " port
+			if [ -n "$port" ]; then
+				read -e -p "file/dir: " file
+				if [ -n "$file" ]; then
+					tar cvf - $file | xz -c | nc -c $recIP $port
+					break
+				else 
+					echo "Please specify a file or directory!"
+				fi
+			else
+				echo "Please specify a port!"
+			fi
+		else
+			echo "Please specify a receiver IP!"
+		fi
+	else
+		break
+	fi
+done

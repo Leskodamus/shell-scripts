@@ -1,0 +1,14 @@
+#!/bin/sh
+# simply manage multiple monitors
+
+#DMENU='dmenu -i -c -g 1 -l 5 -fn IBMPlexMono:semibold:size=12 -nb #000000 -p Display:'
+DMENU='dmenu -i -fn IBMPlexMono:semibold:size=12 -nb #000000 -p Display:'
+choice=$(echo -e "laptop\nhdmi\nvga\nlaptop+hdmi\nlaptop+vga" | $DMENU)
+
+case "$choice" in
+	laptop) xrandr --output eDP1 --auto --output DP1 --auto --off --output HDMI1 --auto --off ;;
+	hdmi) if [ `xrandr | grep -w HDMI1 | grep " connected " | awk '{ print$1 }'` ]; then xrandr --output HDMI1 --auto --output eDP1 --auto --off --output DP1 --auto --off; fi ;;
+	vga) if [ `xrandr | grep -w DP1 | grep " connected " | awk '{ print$1 }'` ]; then xrandr --output DP1 --auto --output eDP1 --auto --off --output HDMI1 --auto --off; fi ;;
+	laptop+hdmi) xrandr --output HDMI1 --auto --right-of eDP1 ;;
+	laptop+vga) xrandr --output DP1 --auto --right-of eDP1 ;;
+esac
