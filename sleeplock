@@ -1,5 +1,5 @@
 #!/bin/sh
 
-slock -m "Locked at $(date)" &
+slock &
 sleep 1
 systemctl suspend
