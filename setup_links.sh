@@ -3,7 +3,6 @@
 # copy scripts into $HOME/.local/bin
 ln -sf $(pwd)/battcheck $HOME/.local/bin/battcheck
 ln -sf $(pwd)/geoip $HOME/.local/bin/geoip
-ln -sf $(pwd)/lock $HOME/.local/bin/lock
 ln -sf $(pwd)/sleeplock $HOME/.local/bin/sleeplock
 ln -sf $(pwd)/myip $HOME/.local/bin/myip
 ln -sf $(pwd)/record $HOME/.local/bin/record
