@@ -10,6 +10,7 @@ ln -sf $(pwd)/xdisplay $HOME/.local/bin/xdisplay
 ln -sf $(pwd)/nctf $HOME/.local/bin/nctf
 ln -sf $(pwd)/toggaudio $HOME/.local/bin/toggaudio
 ln -sf $(pwd)/todo $HOME/.local/bin/todo
+ln -sf $(pwd)/ntodo $HOME/.local/bin/ntodo
 ln -sf $(pwd)/casioclasspad $HOME/.local/bin/casioclasspad
 ln -sf $(pwd)/mdweb $HOME/.local/bin/mdweb
 ln -sf $(pwd)/cloudbackup $HOME/.local/bin/cloudbackup
