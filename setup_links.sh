@@ -12,3 +12,4 @@ ln -sf $(pwd)/todo $HOME/.local/bin/todo
 ln -sf $(pwd)/ntodo $HOME/.local/bin/ntodo
 ln -sf $(pwd)/mdweb $HOME/.local/bin/mdweb
 ln -sf $(pwd)/cloudbackup $HOME/.local/bin/cloudbackup
+ln -sf $(pwd)/casioclasspad $HOME/.local/bin/casioclasspad
