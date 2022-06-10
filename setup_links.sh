@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# copy scripts into $HOME/.local/bin
+# link scripts into $HOME/.local/bin
 ln -sf $(pwd)/battcheck $HOME/.local/bin/battcheck
 ln -sf $(pwd)/geoip $HOME/.local/bin/geoip
 ln -sf $(pwd)/sleeplock $HOME/.local/bin/sleeplock
