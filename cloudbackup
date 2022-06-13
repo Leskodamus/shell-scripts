@@ -1,6 +1,6 @@
 #!/bin/sh
 
-DEST="/media/flo/backup/archlinux-laptop-home-backup/"
+DEST="/run/media/flo/backup/archlinux-laptop-home-backup/"
 LOG="/tmp/$$_$(date +%d-%m-%Y-%H:%M:%S)_backup"
 
 echo "Temporary log can be found here: ${LOG}"
