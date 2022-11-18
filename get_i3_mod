@@ -1,0 +1,18 @@
+#!/bin/sh
+
+i3status | while :
+do
+    read line
+    ALT="Mod1"
+    SUPER="Mod4"
+    conf="$HOME/.config/i3/config"
+    modkey=$(grep "set \$mod" $conf | awk '{print $NF}')
+    if [ "$modkey" = "$SUPER" ]; then
+        modkey="Super"
+    elif [ "$currmod" = "$ALT" ]; then
+        modkey="Alt"
+    else
+        modkey="Unknown"
+    fi
+    echo "Mod: $modkey | $line" || exit 1
+done

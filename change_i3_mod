@@ -8,9 +8,9 @@ SUPER="Mod4"
 conf="$HOME/.config/i3/config"
 currmod=$(grep "set \$mod" $conf | awk '{print $NF}')
 
-if [ "$currmod" = $SUPER ]; then
+if [ "$currmod" = "$SUPER" ]; then
     currmod="Super"
-elif [ "$currmod" = $ALT ]; then
+elif [ "$currmod" = "$ALT" ]; then
     currmod="Alt"
 else
     currmod="Unknown"
@@ -19,11 +19,11 @@ fi
 choice="$(echo "Super,Alt" | rofi -i -sep ',' -dmenu -p "Change mod (set $currmod)")"
 
 if [ "$choice" = "Win" ]; then
-    modkey=$SUPER
+    modkey="$SUPER"
 elif [ "$choice" = "Alt" ]; then
-    modkey=$ALT
+    modkey="$ALT"
 else
-    modkey=$ALT
+    modkey="$SUPER"
 fi
 
 sed -i "s/\(set \$mod\)\(.*\)/\1 $modkey/" ~/.config/i3/config
