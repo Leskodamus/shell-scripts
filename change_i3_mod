@@ -23,7 +23,7 @@ if [ "$choice" = "Win" ]; then
 elif [ "$choice" = "Alt" ]; then
     modkey=$ALT
 else
-    modkey=$SUPER
+    modkey=$ALT
 fi
 
 sed -i "s/\(set \$mod\)\(.*\)/\1 $modkey/" ~/.config/i3/config
