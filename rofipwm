@@ -2,7 +2,7 @@
 
 # Simple rofi power menu
 
-choice=$(echo "Logout,Reboot,Shutdown" | rofi -i -sep ',' -dmenu -P "Action")
+choice=$(echo "Logout,Reboot,Shutdown" | rofi -i -sep ',' -dmenu -P "Power")
 
 case "$choice" in
 	Logout) pkill dwm ;;
