@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# Simple rofi power menu
+
+choice=$(echo "Logout,Reboot,Shutdown" | rofi -i -sep ',' -dmenu)
+
+case "$choice" in
+	Logout) pkill dwm ;;
+	Reboot) sudo systemctl reboot ;;
+	Shutdown) sudo systemctl poweroff  ;;
+esac

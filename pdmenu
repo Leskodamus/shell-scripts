@@ -1,5 +1,6 @@
 #!/bin/sh
-# simple dmenu power menu
+
+# Simple dmenu power menu
 
 DMENU='dmenu -fn IBMPlexMono:semibold:size=12 -nb #000000 -p Power:'
 choice=$(echo -e "sleep\nlogout\nreboot\nshutdown" | $DMENU)
