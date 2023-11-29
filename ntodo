@@ -1,3 +1,0 @@
-#!/bin/sh
-
-st -e vi $HOME/cloud/todo.md &
